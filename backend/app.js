@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://fast-food.onrender.com"],
+    origin: ["http://localhost:3000", "https://fast-food-8a0f.onrender.com"],
   })
 );
 
