@@ -1,24 +1,32 @@
 # fast-food
 
 ## O aplikaciji
-Ovo je web aplikacija na kojoj se može pronaći ponuda (fiktivnog) fast food restorana. U razvoju aplikacije koristio se programski jezik JavaScript, 
+
+Ovo je web aplikacija na kojoj se može pronaći ponuda (fiktivnog) fast food restorana. U razvoju aplikacije koristio se programski jezik JavaScript,
 Node.js u backend dijelu, a u frontend dijelu React.js.
 
 ## Pokretanje
+
+Aplikaciju možete pregledati na sljedećem linku: `https://fast-food-8a0f.onrender.com/`.
+
+Međutim, aplikacija se može klonirati i pokrenuti na vlastitom računalu.
 Evo koraka za kloniranje i pokretanje web aplikacije:
 
 1. Kloniranje repozitorija:
+
    - Otvorite terminal ili komandnu liniju.
    - Navigirajte do direktorija u kojem želite smjestiti vašu aplikaciju.
    - Izvršite sljedeću naredbu: `git clone https://github.com/lovgoru/fast-food.git`
 
 2. Dodavanje .env u backend dijelu:
+
    - Otvorite terminal ili komandnu liniju.
    - Navigirajte do direktorija `backend` u kloniranoj aplikaciji: `cd backend`.
    - Kreirajte datoteku imena `.env` pomoću naredbe touch .env
-   - U .env datoteci definirajte varijable MONGODB_URI i PORT s adresom za spajanje na bazu i brojem porta (koji nije 3000)
+   - U .env datoteci definirajte varijablu MONGODB_URI s adresom za spajanje na bazu.
 
 3. Pokretanje backend servera:
+
    - Otvorite terminal ili komandnu liniju.
    - Navigirajte do direktorija `backend` u kloniranoj aplikaciji: `cd backend`.
    - Instalirajte ovisnosti pokretanjem naredbe `npm install`.

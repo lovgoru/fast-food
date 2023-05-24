@@ -8,7 +8,11 @@ const Home = () => {
 
   useEffect(() => {
     const fetchSpecials = async () => {
-      const response = await fetch("http://localhost:8080/api/foods/specials");
+      const response = await fetch(
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080/api/foods/specials"
+          : "https://fast-food-api.onrender.com/api/foods/specials"
+      );
       const json = await response.json();
 
       if (response.ok) {

@@ -17,7 +17,11 @@ const Products = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("http://localhost:8080/api/foods");
+      const response = await fetch(
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080/api/foods/specials"
+          : "https://fast-food-api.onrender.com/api/foods"
+      );
       const json = await response.json();
 
       if (response.ok) {
