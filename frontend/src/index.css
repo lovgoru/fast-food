@@ -93,6 +93,10 @@ body {
   cursor: pointer;
 }
 
+.clip-loader {
+  margin: 0 auto;
+}
+
 @media (min-width: 400px) {
   .products {
     margin-top: 150px;

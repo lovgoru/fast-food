@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import Special from "../components/Special";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Home = () => {
   const [specials, setSpecials] = useState(null);
   const [shownDiv, setShownDiv] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchSpecials = async () => {
@@ -17,6 +19,7 @@ const Home = () => {
 
       if (response.ok) {
         setSpecials(json);
+        setIsLoading(false);
       }
     };
 
@@ -34,12 +37,16 @@ const Home = () => {
   return (
     <div className="specials-div">
       <h2>Popularni proizvodi</h2>
-      {specials && (
-        <div className="special-with-arrays">
-          <FaChevronLeft onClick={previousSpecial} className="array" />
-          <Special special={specials[shownDiv]} />
-          <FaChevronRight onClick={nextSpecial} className="array" />
-        </div>
+      {isLoading ? (
+        <ClipLoader className="clip-loader" color="#ffbd38" />
+      ) : (
+        specials && (
+          <div className="special-with-arrays">
+            <FaChevronLeft onClick={previousSpecial} className="array" />
+            <Special special={specials[shownDiv]} />
+            <FaChevronRight onClick={nextSpecial} className="array" />
+          </div>
+        )
       )}
     </div>
   );
